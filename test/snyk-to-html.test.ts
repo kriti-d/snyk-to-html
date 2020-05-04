@@ -14,7 +14,7 @@ test('all-around test', (t) => {
     path.join(__dirname, '..', 'template', 'test-report.hbs'),
       noSummary,
      (report) => {
-      t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+      t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
       t.contains(report, '<h2 class="card__title">Cross-site Scripting (XSS)</h2>', 'should contain Cross-site Scripting (XSS) vulnerability');
       t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (DoS)</h2>', 'should contain Regular Expression Denial of Service (DoS) vulnerability');
       t.contains(report, '<h2 id="overview">Overview</h2>', 'should contain overview of the vulnerability');
@@ -32,7 +32,7 @@ test('multi-report test', (t) => {
      (report) => {
       t.contains(report, '<div class="meta-count"><span>139 vulnerable dependency paths</span></div>', 'should contain number of vulnerable dependency paths');
       t.contains(report, '<h2 class="card__title">Access Restriction Bypass</h2>', 'should contain Access Restriction Bypass vulnerability');
-      t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+      t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
       t.contains(report, '<h2 class="card__title">Cross-site Scripting (XSS)</h2>', 'should contain Cross-site Scripting (XSS) vulnerability');
       t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (DoS)</h2>', 'should contain Regular Expression Denial of Service (DoS) vulnerability');
       t.contains(report, '<h2 id="overview">Overview</h2>', 'should contain overview of the vulnerability');
@@ -50,7 +50,7 @@ test('multi-report test with summary only', (t) => {
       (report) => {
         t.contains(report, '<div class="meta-count"><span>139 vulnerable dependency paths</span></div>', 'should contain number of vulnerable dependency paths');
         t.contains(report, '<h2 class="card__title">Access Restriction Bypass</h2>', 'should contain Access Restriction Bypass vulnerability');
-        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
         t.contains(report, '<h2 class="card__title">Cross-site Scripting (XSS)</h2>', 'should contain Cross-site Scripting (XSS) vulnerability');
         t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (DoS)</h2>', 'should contain Regular Expression Denial of Service (DoS) vulnerability');
         t.doesNotHave(report, '<h2 id="overview">Overview</h2>', 'does not contain overview of the vulnerability');
@@ -66,7 +66,7 @@ test('all-around test with summary only', (t) => {
       path.join(__dirname, '..', 'template', 'test-report.hbs'),
       summaryOnly,
       (report) => {
-        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
         t.contains(report, '<h2 class="card__title">Cross-site Scripting (XSS)</h2>', 'should contain Cross-site Scripting (XSS) vulnerability');
         t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (DoS)</h2>', 'should contain Regular Expression Denial of Service (DoS) vulnerability');
         t.doesNotHave(report, '<h2 id="overview">Overview</h2>', 'does not contain overview of the vulnerability');
@@ -82,7 +82,7 @@ test('all-around test with summary only with no remediation but having one fixed
       path.join(__dirname, '..', 'template', 'test-report.hbs'),
       summaryOnly,
       (report) => {
-        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
         t.contains(report, 'Fixed in: 2.9.10', 'should say: Fixed in: 2.9.10');
         t.doesNotHave(report, '<h2 id="overview">Overview</h2>', 'does not contain overview of the vulnerability');
         t.doesNotHave(report, '<h2 id="details">Details</h2>', 'does not contain details of the vulnerability');
@@ -97,7 +97,7 @@ test('all-around test with summary only with no remediation but having multiple 
       path.join(__dirname, '..', 'template', 'test-report.hbs'),
       summaryOnly,
       (report) => {
-        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
         t.contains(report, 'Fixed in: 2.9.10, 4.5.6', 'should say: Fixed in: 2.9.10, 4.5.6');
         t.doesNotHave(report, '<h2 id="overview">Overview</h2>', 'does not contain overview of the vulnerability');
         t.doesNotHave(report, '<h2 id="details">Details</h2>', 'does not contain details of the vulnerability');
@@ -112,7 +112,7 @@ test('all-around test with summary only with no remediation and no fixedIns', (t
       path.join(__dirname, '..', 'template', 'test-report.hbs'),
       summaryOnly,
       (report) => {
-        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)<\/h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
+        t.contains(report, '<h2 class="card__title">Regular Expression Denial of Service (ReDoS)</h2>', 'should contain Regular Expression Denial of Service (ReDoS) vulnerability');
         t.contains(report, 'There is no remediation at the moment', 'should say There is no remediation at the moment');
         t.doesNotHave(report, '<h2 id="overview">Overview</h2>', 'does not contain overview of the vulnerability');
         t.doesNotHave(report, '<h2 id="details">Details</h2>', 'does not contain details of the vulnerability');
